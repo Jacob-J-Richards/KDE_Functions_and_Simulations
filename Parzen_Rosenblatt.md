@@ -5,9 +5,9 @@
     
     2.) evaluates the KDE on each sample at a given h bandwidth 
     
-    3.) finds the bias and variance of the trials for each bandwidth 
+    3.) take the mean 150 KDE evaluations from 150 samples for each bandwidth 
     
-    4.) plots the totall bias and variance of the KDE as a function of step size 
+    4.) evaluates and plots the totall bias and variance of the mean of the sample evaluations for each bandwidth h 
     
     5.) evaluates the MSE and prints MSE (sum of totall bias and variance) to suppliment visual plot 
 
