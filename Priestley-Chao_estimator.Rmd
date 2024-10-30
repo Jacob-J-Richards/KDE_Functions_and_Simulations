@@ -1,6 +1,3 @@
----
-title: "Untitled"
----
 
 set class for base function and alt function
 ```{r}
