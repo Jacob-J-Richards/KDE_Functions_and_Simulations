@@ -30,12 +30,13 @@ Base Function:
         show(object)
 
 the results of the estimator 
-![alt text](https://github.com/Jacob-J-Richards/KDE_Functions_and_Simulations/blob/main/images/estimator.JPG)
+![1030-2](https://github.com/user-attachments/assets/3f33d476-5b2b-46d4-94d9-22d7c7d4bbdc)
 
 you can see the estimator is not as good around x=0 because the noise coeficients were sampled from Noise ~ N(0,1)
 
 the data set the estimator is evaluating on 
-![alt text](https://github.com/Jacob-J-Richards/KDE_Functions_and_Simulations/blob/main/images/data.JPG)
+![1030-1](https://github.com/user-attachments/assets/149e0689-2f3a-4659-98f1-fbbb26ed6973)
+
 
 Alternative Maximal Function:
 
