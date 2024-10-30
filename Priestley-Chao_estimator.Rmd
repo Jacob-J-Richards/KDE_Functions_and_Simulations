@@ -94,19 +94,25 @@ show(object)
 ```
 
 
+```{r}
+setClass("estimator2", representation( h = "numeric", max_xi = "numeric", 
+                                      x = "numeric", y = "numeric", MPC = "numeric",
+                                      input_argument = "numeric"))
+```
 
 Alternative function
 ```{r}
 setGeneric("PC.smoother.maximal", function(object) { standardGeneric("PC.smoother.maximal")})
 
-setMethod("PC.smoother.maximal", signature= "estimator", function(object){
+setMethod("PC.smoother.maximal", signature= "estimator2", function(object){
 
+  object@x <- numeric(100)
   object@x<- rnorm(100)
   
-  object@h = length(x)^(-1/5)
+  object@h = length(object@x)^(-1/5)
   epsilon <- rnorm(100)
   
-  object@y <- cos(3*x) + 0.1*epsilon
+  object@y <- cos(3*object@x) + 0.1*epsilon
   
 matrix_data <- cbind(object@x, object@y)
 
@@ -141,7 +147,7 @@ sorted_matrix <- matrix_data[order(matrix_data[,1]),]
 Find max for alternative function
 ```{r}
 setGeneric("find.max", function(object) { standardGeneric("find.max")})
-setMethod("find.max", signature = "estimator", function(object) {
+setMethod("find.max", signature = "estimator2", function(object) {
   max_xi <- numeric(10000)
   
   for (i in 1:10000) {
@@ -162,7 +168,7 @@ setMethod("find.max", signature = "estimator", function(object) {
 
 alternative function: function call sequence
 ```{r}
-maximal_object <- new("estimator", h = 1, x = numeric(), max_xi= numeric(), y = numeric(), 
+maximal_object <- new("estimator2", h = 1, x = 1, max_xi= numeric(), y = 1, 
                       MPC=numeric(), input_argument = seq(-4,4,length.out=500))
 
 start_time <- Sys.time()
