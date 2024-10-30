@@ -1,9 +1,3 @@
----
-title: "R_Nadaraya_Watson_Estimator"
-output: html_document
-date: "2024-09-28"
----
-
 
 ```{r}
 setClass("estimator", representation( MPC = "numeric",
